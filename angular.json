@@ -24,9 +24,15 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
+              "src/favicon.png",
+              "src/favicon-32.png",
+              "src/favicon-64.png",
+              "src/favicon-96.png",
               "src/assets"
             ],
-            "styles": [],
+            "styles": [
+                "src/assets/style/main.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -81,9 +87,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
-            "styles": [
-              "src/styles.scss"
-            ],
+            "styles": [],
             "scripts": [],
             "assets": [
               "src/favicon.ico",

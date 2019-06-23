@@ -34,14 +34,6 @@ export class StepperComponent extends CdkStepper {
         return this.selectedIndex + 1 < this.steps.length;
     }
 
-    next(): void {
-        if (!this.selected.completed) {
-            return;
-        }
-
-        super.next();
-    }
-
     @Input()
     handleEnd(): void {
     }

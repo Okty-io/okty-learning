@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import Chapter from '../../models/chapter';
+import { TitleService } from "../../../../core/services/title.service";
 
 @Component({
     selector: 'app-learning-chapter',
@@ -10,10 +11,11 @@ export class ChapterComponent implements OnInit {
 
     @Input() chapter: Chapter;
 
-    constructor() {
+    constructor(private title: TitleService) {
     }
 
     ngOnInit() {
+        this.title.set('Chapters');
     }
 
 }

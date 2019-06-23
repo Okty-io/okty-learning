@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LessonRepository } from '../../repositories/lesson.repository';
 import { ActivatedRoute, Router } from '@angular/router';
 import Lesson from '../../models/lesson';
+import { TitleService } from "../../../../core/services/title.service";
 
 @Component({
     selector: 'app-lesson',
@@ -13,7 +14,10 @@ export class LessonComponent implements OnInit {
     public loading: boolean;
     public lesson: Lesson;
 
-    constructor(private lessonRepository: LessonRepository, private activatedRoute: ActivatedRoute, private router: Router) {
+    constructor(private lessonRepository: LessonRepository,
+                private activatedRoute: ActivatedRoute,
+                private router: Router,
+                private title: TitleService) {
     }
 
     ngOnInit() {
@@ -25,6 +29,8 @@ export class LessonComponent implements OnInit {
         this.activatedRoute.params.subscribe((data) => {
             this.lessonRepository.getByChapterAndStepNumber(data.id, data.lesson).then((lesson: Lesson) => {
                 this.lesson = lesson;
+                this.title.set(this.lesson.name);
+
                 this.lesson.steps.map((step) => step.validated = !step.action);
 
                 this.loading = false;
@@ -40,6 +46,6 @@ export class LessonComponent implements OnInit {
 
         localStorage.setItem('lesson_completed', JSON.stringify(completed));
 
-        this.router.navigate(['/learning', 'chapters']);
+        this.router.navigate(['/', 'chapters']);
     }
 }
