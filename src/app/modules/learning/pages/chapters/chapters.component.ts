@@ -25,12 +25,34 @@ export class ChaptersComponent implements OnInit, OnDestroy {
 
         this.chapterSubscription = this.chapterRepository.getAll()
             .subscribe((chapters: Chapter[]) => {
-                this.chapters = chapters;
                 this.loading = false;
+                this.chapters = chapters;
+
+                setTimeout(() => this.updateProgress(), 0);
             });
     }
 
     ngOnDestroy(): void {
         this.chapterSubscription.unsubscribe();
+    }
+
+    private updateProgress(): void {
+        let completed = JSON.parse(localStorage.getItem('lesson_completed'));
+        completed = !!completed ? completed : {};
+
+        let lessonCount = 0;
+        let lessonCompleted = 0;
+
+        this.chapters.forEach((chapter) => {
+            chapter.lessons.forEach((lesson) => {
+                lessonCount++;
+                if (completed.hasOwnProperty(lesson.id)) {
+                    lessonCompleted++;
+                }
+            })
+
+        });
+
+        this.percentage = Math.floor((lessonCompleted / lessonCount) * 100);
     }
 }

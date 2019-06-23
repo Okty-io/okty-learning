@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
     selector: 'app-root',
     template: `
         <app-navbar></app-navbar>
-        <div style="min-height: calc(100% - 427px)">
+        <div style="min-height: calc(100% - 427px); ">
             <router-outlet #outlet="outlet"></router-outlet>
         </div>
         <app-footer></app-footer>

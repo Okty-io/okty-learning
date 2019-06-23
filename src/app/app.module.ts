@@ -6,6 +6,7 @@ import { ApiService } from './core/services/api.service';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CoreModule } from "./core/core.module";
+import { TitleService } from "./core/services/title.service";
 
 @NgModule({
     declarations: [
@@ -18,7 +19,8 @@ import { CoreModule } from "./core/core.module";
         CoreModule
     ],
     providers: [
-        ApiService
+        ApiService,
+        TitleService
     ],
     bootstrap: [AppComponent]
 })

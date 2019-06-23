@@ -40,6 +40,6 @@ export class LessonComponent implements OnInit {
 
         localStorage.setItem('lesson_completed', JSON.stringify(completed));
 
-        this.router.navigate(['/learning', 'chapters']);
+        this.router.navigate(['/', 'chapters']);
     }
 }
