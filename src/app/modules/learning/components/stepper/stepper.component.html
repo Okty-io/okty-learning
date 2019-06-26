@@ -1,5 +1,18 @@
 <h2>{{title}}</h2>
 
+<markdown class="variable-binding">
+## Markdown __rulez__!
+---
+### Lists
+1. Ordered list
+2. Another bullet point
+- Unordered list
+- Another unordered bullet point
+
+### Blockquote
+> Blockquote to the max
+</markdown>
+
 <div class="navigation-bar">
     <div class="step" *ngFor="let step of steps; let i = index;"
          [ngClass]="{'active': selectedIndex === i}"

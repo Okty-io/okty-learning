@@ -21,6 +21,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LessonStepComponent } from './components/lesson-step/lesson-step.component';
 import { ActionRepository } from './repositories/action.repository';
 
+import { MarkdownModule } from 'ngx-markdown';
+
 @NgModule({
     declarations: [
         IndexComponent,
@@ -33,7 +35,7 @@ import { ActionRepository } from './repositories/action.repository';
         ActionDirective,
         VoidComponent,
         QcmComponent,
-        LessonStepComponent,
+        LessonStepComponent
     ],
     imports: [
         CommonModule,
@@ -43,6 +45,7 @@ import { ActionRepository } from './repositories/action.repository';
         CdkStepperModule,
         FormsModule,
         ReactiveFormsModule,
+        MarkdownModule.forRoot()
     ],
     providers: [
         ChapterRepository,
