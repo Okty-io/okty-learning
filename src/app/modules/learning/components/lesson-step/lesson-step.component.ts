@@ -1,11 +1,12 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import Step from '../../models/step';
 import { MarkdownService } from "ngx-markdown";
 
 @Component({
     selector: 'app-learning-lesson-step',
     templateUrl: './lesson-step.component.html',
-    styleUrls: ['./lesson-step.component.scss']
+    styleUrls: ['./lesson-step.component.scss'],
+    encapsulation: ViewEncapsulation.None // Workaround for markdown style
 })
 export class LessonStepComponent implements OnInit {
 
