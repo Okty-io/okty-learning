@@ -3,7 +3,7 @@ services:
     web:
         image: 'node:11-stretch'
         ports:
-            - '127.0.0.1:4200:4200'
+            - '127.0.0.1:4201:4200'
         volumes:
             - './:/app'
         working_dir: '/app'
