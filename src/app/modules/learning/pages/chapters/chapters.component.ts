@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ChapterRepository } from '../../repositories/chapter.repository';
 import Chapter from '../../models/chapter';
 import { Subscription } from 'rxjs';
+import { LanguageService } from "../../../../core/services/language.service";
 
 @Component({
     selector: 'app-chapters',
@@ -15,7 +16,7 @@ export class ChaptersComponent implements OnInit, OnDestroy {
     public chapters: Chapter[];
     private chapterSubscription: Subscription;
 
-    constructor(private chapterRepository: ChapterRepository) {
+    constructor(private chapterRepository: ChapterRepository, private languageService: LanguageService) {
     }
 
     ngOnInit() {
@@ -23,6 +24,16 @@ export class ChaptersComponent implements OnInit, OnDestroy {
         this.percentage = 0;
         this.chapters = [];
 
+        this.languageService.getObservable().subscribe(() => {
+            this.loadChapters();
+        });
+    }
+
+    ngOnDestroy(): void {
+        this.chapterSubscription.unsubscribe();
+    }
+
+    private loadChapters(): void {
         this.chapterSubscription = this.chapterRepository.getAll()
             .subscribe((chapters: Chapter[]) => {
                 this.loading = false;
@@ -30,10 +41,6 @@ export class ChaptersComponent implements OnInit, OnDestroy {
 
                 setTimeout(() => this.updateProgress(), 0);
             });
-    }
-
-    ngOnDestroy(): void {
-        this.chapterSubscription.unsubscribe();
     }
 
     private updateProgress(): void {

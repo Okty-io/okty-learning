@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { LanguageService } from "./language.service";
 
 @Injectable()
 export class ApiService {
@@ -10,7 +11,7 @@ export class ApiService {
     private jwtHelper: JwtHelperService;
     private readonly baseUrl: string;
 
-    constructor(private http: HttpClient) {
+    constructor(private http: HttpClient, private languageService: LanguageService) {
         this.baseUrl = environment.api.host;
         this.jwtHelper = new JwtHelperService();
     }
@@ -33,8 +34,9 @@ export class ApiService {
 
     public get(endpoint: string): Observable<any> {
         const headers = this.getHeaders();
+        const language = this.languageService.getFullLanguage();
 
-        return this.http.get(`${this.baseUrl}/${endpoint}`, {headers: headers});
+        return this.http.get(`${this.baseUrl}/${endpoint}?lang=${language}`, {headers: headers});
     }
 
     public post(endpoint: string, data: any): Observable<any> {
