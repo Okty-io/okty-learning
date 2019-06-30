@@ -9,6 +9,7 @@ import { CoreModule } from "./core/core.module";
 import { TitleService } from "./core/services/title.service";
 import { NgcCookieConsentModule } from "ngx-cookieconsent";
 import { cookieConfig } from "./core/configs/cookie-consent";
+import { LanguageService } from "./core/services/language.service";
 
 @NgModule({
     declarations: [
@@ -23,7 +24,8 @@ import { cookieConfig } from "./core/configs/cookie-consent";
     ],
     providers: [
         ApiService,
-        TitleService
+        TitleService,
+        LanguageService,
     ],
     bootstrap: [AppComponent]
 })

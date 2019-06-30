@@ -22,6 +22,7 @@ import { LessonStepComponent } from './components/lesson-step/lesson-step.compon
 import { ActionRepository } from './repositories/action.repository';
 
 import { MarkdownModule } from 'ngx-markdown';
+import { LanguageComponent } from './pages/language/language.component';
 
 @NgModule({
     declarations: [
@@ -35,7 +36,8 @@ import { MarkdownModule } from 'ngx-markdown';
         ActionDirective,
         VoidComponent,
         QcmComponent,
-        LessonStepComponent
+        LessonStepComponent,
+        LanguageComponent
     ],
     imports: [
         CommonModule,
