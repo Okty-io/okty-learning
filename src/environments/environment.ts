@@ -15,9 +15,7 @@ export const environment = {
     },
     cookie: {
         domain: '127.0.0.1'
-    },
-    displayNavbar: true,
-    gtmId: null
+    }
 };
 
 /*
