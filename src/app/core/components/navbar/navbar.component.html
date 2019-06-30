@@ -1,14 +1,14 @@
 <div class="navbar">
-    <a [routerLink]="'/'">
-        <div class="navbar-left">
+    <div class="navbar-left">
+        <a [routerLink]="['/', language]">
             <div class="logo blue" [inlineSVG]="'./assets/logo-blue.svg'"></div>
             <span class="name">Okty</span>
-        </div>
-    </a>
+        </a>
+    </div>
 
     <div class="navbar-right">
         <div class="large-nav">
-            <a href="https://github.com/okty-io">Github</a>
+            <img [src]="flagUrl" alt="flag" (click)="changeLanguage()" *ngIf="displayLanguageSwitch">
         </div>
     </div>
 </div>
