@@ -1,10 +1,21 @@
 <h1>Learning</h1>
-<p class="welcome">
+<p class="welcome" *ngIf="language === 'en'">
     Welcome to <b>Okty’s Docker Learning Module</b> where we’re going to teach you all you need to know to master
     Docker. On this <b>V1</b> you'll find <b>theoretical learning lessons, quizzes and cheat sheets</b>. <br><br>
     Keep in mind that we’ll be including more chapters over time this year in order to complete this module with
     <b>interactive terminal exercises, docker for production, kubernetes, docker with cloud (probably AWS or GCP)</b>.<br><br><br>
     Feel free to open issues and help us improve our learning module <a href="https://github.com/Okty-io/okty-learning/issues" target="blank">Here</a>.
+</p>
+<p *ngIf="language === 'fr'">
+    Bienvenue sur le <b>module learning d'okty</b> ! Nous allons apprendre ensemble tout ce dont vous avez besoin pour maitriser Dcoker.
+    <br>
+    Dans cette <b>v1</b> vous trouverez des <b>lessons theorique, des quizz et des feuilles résumés de toutes les lessons</b>.
+    <br><br>
+    Garder à l'esprit que nous allons inclure plus de chapitres dans le futur dans le but de completer nos modules avec des interactions plus complexes.
+
+    <br><br>
+
+    Si vous rencontrez le moindre probleme, n'hésitez pas à nous le signaler sur <a href="https://github.com/Okty-io/okty-learning/issues" target="blank">GitHub</a>.
 </p>
 <p>
     <app-button [routerLink]="['/', language, 'chapters']">Start</app-button>
