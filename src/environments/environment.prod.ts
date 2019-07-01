@@ -11,7 +11,5 @@ export const environment = {
     },
     cookie: {
         domain: 'okty.io'
-    },
-    displayNavbar: false,
-    gtmId: 'GTM-WF2K8D9'
+    }
 };
