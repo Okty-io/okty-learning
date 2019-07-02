@@ -1,5 +1,13 @@
-<p class="title">{{ chapter.name }}</p>
-<app-learning-lesson *ngFor="let lesson of chapter.lessons"
-                     [lesson]="lesson"
-                     [routerLink]="['/', language, 'chapters', chapter.id, lesson.position]">
-</app-learning-lesson>
+<div class="container">
+    <div class="avatar">
+        <img src="/assets/lesson_illustration.svg" alt="">
+    </div>
+    <div class="lesson">
+        <p class="title">{{ chapter.name }}</p>
+        <app-learning-lesson *ngFor="let lesson of chapter.lessons"
+                             [lesson]="lesson"
+                             [routerLink]="['/', language, 'chapters', chapter.id, lesson.position]">
+        </app-learning-lesson>
+    </div>
+</div>
+

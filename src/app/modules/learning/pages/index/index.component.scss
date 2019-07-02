@@ -1,5 +1,65 @@
+@import "~src/assets/style/media-query";
 :host {
+
+}
+
+.welcome-block{
+    width: 40%;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    border-radius: 20px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    background-color: #ffffff;
     text-align: center;
+    padding: 50px 0;
+    .welcome {
+       margin: 20px 10% 50px;
+    }
+    .actions{
+        margin: 20px 0;
+    }
+}
+
+.blobs-block{
+    position: absolute;
+    bottom: 50%;
+    right: 5%;
+    transform: translateY(50%);
+    display: block;
+    z-index: 1;
+}
+
+.bottom-color{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 55%;
+    display: block;
+    background-image: linear-gradient(79deg, #8fd3f4, #84fab0);
+    clip-path: polygon(0 45%, 100% 0, 100% 100%, 0 100%);
+}
+
+@include MQ(1200px) {
+    .welcome-block{
+        width: 50%;
+    }
+}
+
+@include MQ(1200px) {
+    .welcome-block{
+        width: 90%;
+        position: inherit;
+        margin: 20px auto;
+        transform: inherit;
+    }
+    .blobs-block{
+        display: none;
+    }
+
 }
 
 .welcome {
