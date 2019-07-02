@@ -18,10 +18,12 @@ import { QcmComponent } from './components/actions/qcm/qcm.component';
 import { ActionDirective } from './directives/action.directive';
 import { VoidComponent } from './components/actions/void/void.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BlobsComponent } from './components/blobs/blobs.component';
 import { LessonStepComponent } from './components/lesson-step/lesson-step.component';
-import { ActionRepository } from './repositories/action.repository';
 
+import { ActionRepository } from './repositories/action.repository';
 import { MarkdownModule } from 'ngx-markdown';
+import { CoreModule } from '../../core/core.module';
 
 @NgModule({
     declarations: [
@@ -35,7 +37,8 @@ import { MarkdownModule } from 'ngx-markdown';
         ActionDirective,
         VoidComponent,
         QcmComponent,
-        LessonStepComponent
+        LessonStepComponent,
+        BlobsComponent
     ],
     imports: [
         CommonModule,
@@ -45,7 +48,8 @@ import { MarkdownModule } from 'ngx-markdown';
         CdkStepperModule,
         FormsModule,
         ReactiveFormsModule,
-        MarkdownModule.forRoot()
+        MarkdownModule.forRoot(),
+        CoreModule
     ],
     providers: [
         ChapterRepository,

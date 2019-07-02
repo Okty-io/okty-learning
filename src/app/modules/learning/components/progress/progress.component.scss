@@ -1,7 +1,7 @@
 .wrapper {
     width: 65%;
     height: 32px;
-    background-color: rgba(61, 104, 221, 0.6);
+    background-color: rgba(218, 218, 218, 0.6);
     border-radius: 8px;
     margin: 24px auto 24px;
     position: relative;
@@ -21,6 +21,7 @@
         border-radius: 8px;
         height: 32px;
         background-color: #3D68DD;
+        background-image: linear-gradient(125deg, #8fd3f4, #84fab0);
         width: 0;
 
         transition: width 2s;
