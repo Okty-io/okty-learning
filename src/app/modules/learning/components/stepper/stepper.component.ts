@@ -1,5 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { CdkStepper } from '@angular/cdk/stepper';
+import { LanguageService } from "../../../../core/services/language.service";
+import { Subscription } from "rxjs";
+import { Directionality } from "@angular/cdk/bidi";
 
 @Component({
     selector: 'app-learning-stepper',
@@ -7,7 +10,23 @@ import { CdkStepper } from '@angular/cdk/stepper';
     styleUrls: ['./stepper.component.scss'],
     providers: [{provide: CdkStepper, useExisting: StepperComponent}]
 })
-export class StepperComponent extends CdkStepper {
+export class StepperComponent extends CdkStepper implements OnInit, OnDestroy {
+
+    private subscription: Subscription;
+
+    public language: string;
+
+    constructor(dir: Directionality, changeDetectorRef: ChangeDetectorRef, private languageService: LanguageService) {
+        super(dir, changeDetectorRef);
+    }
+
+    ngOnInit(): void {
+        this.subscription = this.languageService.getObservable().subscribe(language => this.language = language);
+    }
+
+    ngOnDestroy(): void {
+        this.subscription.unsubscribe();
+    }
 
     @Input() title: string;
 
