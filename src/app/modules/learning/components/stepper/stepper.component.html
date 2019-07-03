@@ -1,3 +1,5 @@
+<div class="close-button" [routerLink]="['/', language, 'chapters']"></div>
+
 <h2>{{title}}</h2>
 
 <div class="navigation-bar">
@@ -13,7 +15,7 @@
 </div>
 
 <div class="action-bar">
-    <app-button [type]="'light'" [disabled]="!hasPrevious()" (click)="previous()">Previous</app-button>
-    <app-button [type]="'primary'" (click)="next()" *ngIf="hasNext()">Next</app-button>
-    <app-button [type]="'primary'" (click)="handleEnd()" *ngIf="!hasNext()">Go to next chapter</app-button>
+    <app-button [type]="'cta cta__primary outlined__grey'" [disabled]="!hasPrevious()" (click)="previous()">Previous</app-button>
+    <app-button [type]="'cta cta__primary gradient__cyan'" (click)="next()" *ngIf="hasNext()">Next</app-button>
+    <app-button [type]="'cta cta__primary gradient__cyan'" (click)="handleEnd()" *ngIf="!hasNext()">Go to next chapter</app-button>
 </div>
