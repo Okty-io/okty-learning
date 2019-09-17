@@ -1,0 +1,12 @@
+@import '../../colors';
+
+.background {
+    width: 100%;
+    height: 55%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background-image: linear-gradient(79deg, $blue-background, $green-background);
+    clip-path: polygon(0 45%, 100% 0, 100% 100%, 0 100%);
+}

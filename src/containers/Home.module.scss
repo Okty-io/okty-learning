@@ -1,0 +1,14 @@
+.grid {
+    height: calc(95vh - 96px);
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    position: relative;
+    z-index: 50;
+
+    > div {
+        width: 40%;
+    }
+}

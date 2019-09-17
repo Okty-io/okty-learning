@@ -1,0 +1,12 @@
+.text {
+    line-height: 1.7;
+
+    p:not(.action) {
+        padding: 0 40px;
+    }
+
+    .action {
+        max-width: 200px;
+        margin: auto;
+    }
+}
