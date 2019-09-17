@@ -1,0 +1,11 @@
+@import '../../colors';
+
+.container {
+    height: 40px;
+    line-height: 40px;
+    border-radius: 30px;
+    padding: 0 30px;
+    cursor: pointer;
+    background-color: $blue-primary;
+    color: $white-text;
+}
