@@ -2,8 +2,9 @@ import React from 'react';
 import Card from '../utils/Card';
 import Button from '../utils/Button';
 import style from './LeftPanel.module.scss';
+import { withRouter } from "react-router";
 
-export default () => (
+export default withRouter(({ history, match: { params: { locale } } }) => (
     <div className={style.text}>
         <Card textAlign='center'>
             <p>
@@ -24,9 +25,9 @@ export default () => (
                 Feel free to open issues and help us improve our learning module Here.
             </p>
 
-            <p className={style.action}>
-                <Button>Get started</Button>
-            </p>
+            <div className={style.action}>
+                <Button onClick={() => history.push(`/${locale}/chapters`)}>Get started</Button>
+            </div>
         </Card>
     </div>
-)
+))
