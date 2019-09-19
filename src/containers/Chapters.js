@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { fetchAll } from "../redux/actions/chapters";
+import { fetchAll } from '../redux/actions/chapters';
 
 class Chapters extends React.Component {
 
@@ -10,10 +10,15 @@ class Chapters extends React.Component {
         props.fetchChapters();
     }
 
-
     render() {
+        const { chapters } = this.props;
+
         return (
-            <div>Chapters | {this.props.chapters.length}</div>
+            <React.Fragment>
+                {chapters.map(chapter =>
+                    <p key={chapter.id}>{chapter.name}</p>
+                )}
+            </React.Fragment>
         )
     }
 }
@@ -26,7 +31,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-    fetchChapters: () => dispatch(fetchAll())
+    fetchChapters: () => dispatch(fetchAll(dispatch))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Chapters);

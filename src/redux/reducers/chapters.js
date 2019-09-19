@@ -1,13 +1,14 @@
 import * as type from '../constants/chapters';
 
 const initialState = {
-    chapters: []
+    chapters: [],
+    error: null
 };
 
 const reducer = function (state = initialState, action) {
     switch (action.type) {
-        case type.FETCH_ALL:
-            return { ...state, chapters: [1, 2, 3] };
+        case type.RECEIVE_ALL:
+            return { ...state, chapters: action.payload.chapters };
         default:
             return state;
     }
