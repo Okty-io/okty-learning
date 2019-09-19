@@ -12,7 +12,8 @@ export const fetchAll = (dispatch) => {
             }
         })
         .then(response => response.json())
-        .then(response => dispatch(receiveAll(response)));
+        .then(response => dispatch(receiveAll(response)))
+        .catch(() => dispatch(error('Cannot fetch chapters')));
 
     return {
         type: type.FETCH_ALL,
@@ -24,5 +25,12 @@ export const receiveAll = chapters => {
     return {
         type: type.RECEIVE_ALL,
         payload: { chapters }
+    }
+};
+
+export const error = message => {
+    return {
+        type: type.ERROR,
+        payload: { message }
     }
 };

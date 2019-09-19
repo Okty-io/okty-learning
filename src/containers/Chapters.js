@@ -11,13 +11,16 @@ class Chapters extends React.Component {
     }
 
     render() {
-        const { chapters } = this.props;
+        const { chapters, error } = this.props;
 
         return (
             <React.Fragment>
-                {chapters.map(chapter =>
+                {!error && chapters.map(chapter =>
                     <p key={chapter.id}>{chapter.name}</p>
                 )}
+                {error &&
+                    <p>THERE IS AN ERROR.</p>
+                }
             </React.Fragment>
         )
     }
@@ -25,9 +28,9 @@ class Chapters extends React.Component {
 
 const mapStateToProps = state => {
 
-    const { chapters } = state.chaptersReducer;
+    const { chapters, error } = state.chaptersReducer;
 
-    return { chapters };
+    return { chapters, error };
 };
 
 const mapDispatchToProps = dispatch => ({
