@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
 import { fetchAll } from '../redux/actions/chapters';
+import ChaptersCard from "../components/chapters/ChaptersCard";
 
 class Chapters extends React.Component {
 
@@ -16,7 +17,7 @@ class Chapters extends React.Component {
         return (
             <React.Fragment>
                 {!error && chapters.map(chapter =>
-                    <p key={chapter.id}>{chapter.name}</p>
+                    <ChaptersCard chapter={chapter} key={chapter.id}/>
                 )}
                 {error &&
                     <p>THERE IS AN ERROR.</p>
