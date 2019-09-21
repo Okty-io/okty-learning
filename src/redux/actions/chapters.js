@@ -1,6 +1,20 @@
 import * as type from '../constants/chapters';
 import { API_URL } from '../../constants';
 
+export const receiveAll = chapters => {
+    return {
+        type: type.RECEIVE_ALL,
+        payload: { chapters }
+    }
+};
+
+export const error = message => {
+    return {
+        type: type.ERROR,
+        payload: { message }
+    }
+};
+
 export const fetchAll = (dispatch) => {
 
     fetch(`${API_URL}/learning/chapters`,
@@ -19,18 +33,4 @@ export const fetchAll = (dispatch) => {
         type: type.FETCH_ALL,
         payload: {}
     };
-};
-
-export const receiveAll = chapters => {
-    return {
-        type: type.RECEIVE_ALL,
-        payload: { chapters }
-    }
-};
-
-export const error = message => {
-    return {
-        type: type.ERROR,
-        payload: { message }
-    }
 };
