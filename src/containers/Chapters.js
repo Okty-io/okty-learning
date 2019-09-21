@@ -1,7 +1,7 @@
 import React from 'react';
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 import { fetchAll } from '../redux/actions/chapters';
-import ChaptersCard from "../components/chapters/ChaptersCard";
+import ChaptersCard from '../components/chapters/ChaptersCard';
 
 class Chapters extends React.Component {
 
@@ -28,7 +28,6 @@ class Chapters extends React.Component {
 }
 
 const mapStateToProps = state => {
-
     const { chapters, error } = state.chaptersReducer;
 
     return { chapters, error };
