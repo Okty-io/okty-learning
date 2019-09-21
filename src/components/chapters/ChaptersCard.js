@@ -12,7 +12,7 @@ class ChaptersCard extends React.PureComponent {
             <React.Fragment>
                 <div className={style.container} key={chapter.id}>
                     <div className={style.avatar}>
-                        <img src={illustration} alt="`Chapter ${chapter.name} illustration`"/>
+                        <img src={illustration} alt="Chapter illustration"/>
                     </div>
                     <div className={style.lesson}>
                         <p className={style.title}>{chapter.name}</p>
