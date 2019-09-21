@@ -1,20 +1,15 @@
 import React from 'react';
 import style from './ChaptersLessonButton.module.scss';
+import { Link } from "react-router-dom";
+import { withRouter } from "react-router";
 
-class ChaptersLessonButton extends React.PureComponent {
-
-    render() {
-        const { lesson } = this.props;
-
-        return (
-            <React.Fragment>
-                <div className={style.block}>
-                    <p>{lesson.position}. {lesson.name}</p>
-                    <div className={style.status}/>
-                </div>
-            </React.Fragment>
-        )
-    }
-}
-
-export default ChaptersLessonButton;
+export default withRouter(({ lesson, chapter, match: { params: { locale } } }) => (
+    <React.Fragment>
+        <div className={style.block}>
+            <Link to={`/${locale}/chapters/${chapter.id}/lessons/${lesson.id}`}>
+                <p>{lesson.position}. {lesson.name}</p>
+            </Link>
+            <div className={style.status}/>
+        </div>
+    </React.Fragment>
+));

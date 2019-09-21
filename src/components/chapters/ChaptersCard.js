@@ -2,11 +2,15 @@ import React from 'react';
 import style from './ChaptersCard.module.scss';
 import ChaptersLessonButton from './ChaptersLessonButton';
 import illustration from '../../assets/chapters/lesson_illustration.svg'
+import Button from '../utils/Button';
+import { withRouter } from "react-router";
+import { Link } from 'react-router-dom';
 
 class ChaptersCard extends React.PureComponent {
-
     render() {
         const { chapter, chapter: { lessons } } = this.props;
+
+        const { match: { params: { locale } } } = this.props;
 
         return (
             <React.Fragment>
@@ -17,8 +21,13 @@ class ChaptersCard extends React.PureComponent {
                     <div className={style.lesson}>
                         <p className={style.title}>{chapter.name}</p>
                         {lessons.map(lesson =>
-                            <ChaptersLessonButton key={lesson.id} lesson={lesson}/>
+                            <ChaptersLessonButton key={lesson.id} lesson={lesson} chapter={chapter}/>
                         )}
+                    </div>
+                    <div className={style.action}>
+                        <Link to={`/${locale}/chapters/${chapter.id}`}>
+                            <Button>Details</Button>
+                        </Link>
                     </div>
                 </div>
             </React.Fragment>
@@ -26,4 +35,4 @@ class ChaptersCard extends React.PureComponent {
     }
 }
 
-export default ChaptersCard;
+export default withRouter(ChaptersCard);
