@@ -9,7 +9,7 @@ class ChaptersLessonButton extends React.PureComponent {
         return (
             <React.Fragment>
                 <div className={style.block}>
-                    <p>{lesson.position}.{lesson.name}</p>
+                    <p>{lesson.position}. {lesson.name}</p>
                     <div className={style.status}/>
                 </div>
             </React.Fragment>
