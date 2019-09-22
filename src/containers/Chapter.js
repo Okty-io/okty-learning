@@ -1,6 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchOne } from "../redux/actions/chapters";
+import Title from '../components/utils/Title';
+import illustration from "../assets/chapters/lesson_illustration.svg";
+import Card from '../components/utils/Card/Card';
+import CardContent from '../components/utils/Card/CardContent';
+import CardBottom from '../components/utils/Card/CardBottom';
 
 class Chapter extends React.Component {
 
@@ -17,7 +22,24 @@ class Chapter extends React.Component {
 
         return (
             <React.Fragment>
-                <h1>{chapter.name}</h1>
+                <Title>{chapter.name}</Title>
+                <Card image={{ src: illustration, alt: 'test' }}>
+                    <CardContent>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consequuntur cum eligendi
+                            incidunt nobis quas similique voluptas. Atque autem consequatur, esse magnam minima nam
+                            numquam placeat possimus qui quibusdam, temporibus.
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius possimus provident sequi
+                            ullam? Assumenda at consequuntur corporis ex hic inventore nam natus nobis odit pariatur
+                            possimus, ratione rem. At, voluptates.
+                        </p>
+                    </CardContent>
+                    <CardBottom>
+                        Duration : 30 minutes
+                    </CardBottom>
+                </Card>
             </React.Fragment>
         );
     }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchAll } from '../redux/actions/chapters';
-import ChaptersCard from '../components/chapters/ChaptersCard';
+import ChapterCard from '../components/chapters/ChapterCard';
 import ProgressBar from '../components/chapters/ProgressBar';
 
 class Chapters extends React.Component {
@@ -23,7 +23,7 @@ class Chapters extends React.Component {
             <React.Fragment>
                 <ProgressBar percentage={50}/>
                 {chapters.map(chapter =>
-                    <ChaptersCard chapter={chapter} key={chapter.id}/>
+                    <ChapterCard chapter={chapter} key={chapter.id}/>
                 )}
             </React.Fragment>
         )
