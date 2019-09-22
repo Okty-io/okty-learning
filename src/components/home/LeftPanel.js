@@ -1,12 +1,11 @@
 import React from 'react';
-import Card from '../utils/Card';
 import Button from '../utils/Button';
 import style from './LeftPanel.module.scss';
 import { withRouter } from "react-router";
 
 export default withRouter(({ history, match: { params: { locale } } }) => (
     <div className={style.text}>
-        <Card textAlign='center'>
+        <div className={style.card} textAlign='center'>
             <p>
                 Welcome to Okty’s Docker Learning Module where we’re going to teach you all you need to know
                 to master Docker. On this V1 you'll find theoretical learning lessons, quizzes and cheat
@@ -28,6 +27,6 @@ export default withRouter(({ history, match: { params: { locale } } }) => (
             <div className={style.action}>
                 <Button onClick={() => history.push(`/${locale}/chapters`)}>Get started</Button>
             </div>
-        </Card>
+        </div>
     </div>
 ))
