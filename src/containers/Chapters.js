@@ -15,15 +15,16 @@ class Chapters extends React.Component {
     render() {
         const { chapters, error } = this.props;
 
+        if (error) {
+            return <p>THERE IS AN ERROR.</p>
+        }
+
         return (
             <React.Fragment>
                 <ProgressBar percentage={50}/>
-                {!error && chapters.map(chapter =>
+                {chapters.map(chapter =>
                     <ChaptersCard chapter={chapter} key={chapter.id}/>
                 )}
-                {error &&
-                    <p>THERE IS AN ERROR.</p>
-                }
             </React.Fragment>
         )
     }
