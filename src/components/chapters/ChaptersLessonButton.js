@@ -9,7 +9,6 @@ export default withRouter(({ lesson, chapter, match: { params: { locale } } }) =
             <Link to={`/${locale}/chapters/${chapter.id}/lessons/${lesson.id}`}>
                 <p>{lesson.position}. {lesson.name}</p>
             </Link>
-            <div className={style.status}/>
         </div>
     </React.Fragment>
 ));

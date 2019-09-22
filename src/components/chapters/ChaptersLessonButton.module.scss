@@ -15,31 +15,10 @@
 
     p {
         margin: 0;
-        padding-left: 20px;
-        line-height: 50px;
+        padding: 0 20px;
+        line-height: 35px;
         font-weight: 400;
         display: inline-block;
-    }
-}
-
-
-.status {
-    display: inline-block;
-    height: 24px;
-    width: 24px;
-    margin-top: 13px;
-    float: right;
-    margin-right: 10px;
-    margin-left: 20px;
-    border: 1px solid rgba(112, 112, 112, 0.6);
-    border-radius: 50%;
-
-    text-align: center;
-    font-size: 11px;
-    line-height: 24px;
-    color: $white-text;
-
-    &[completed=true] {
-        background-color: $blue-primary;
+        font-size: 0.8em;
     }
 }

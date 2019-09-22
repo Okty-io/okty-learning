@@ -1,9 +1,9 @@
 @import "../../colors";
 
 .container {
-    max-width: 1300px;
+    max-width: 1220px;
     width: 90%;
-    min-height: 340px;
+    min-height: 290px;
     margin: 25px auto 50px;
     box-shadow: $shadow-light;
     position: relative;
@@ -13,9 +13,9 @@
     }
 
     .avatar {
-        min-height: 340px;
+        min-height: 290px;
         height: 100%;
-        width: 340px;
+        width: 290px;
         display: inline-block;
         background-image: linear-gradient(125deg, $green-background, $blue-background);
         vertical-align: top;
@@ -45,6 +45,7 @@
             margin-bottom: 20px;
             display: block;
             padding: 0;
+            font-size: 1.1em;
         }
     }
 
