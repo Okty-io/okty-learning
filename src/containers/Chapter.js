@@ -6,6 +6,7 @@ import illustration from "../assets/chapters/lesson_illustration.svg";
 import Card from '../components/utils/Card/Card';
 import CardContent from '../components/utils/Card/CardContent';
 import CardBottom from '../components/utils/Card/CardBottom';
+import LessonList from '../components/chapter/LessonList';
 
 class Chapter extends React.Component {
 
@@ -40,6 +41,7 @@ class Chapter extends React.Component {
                         Duration : 30 minutes
                     </CardBottom>
                 </Card>
+                <LessonList/>
             </React.Fragment>
         );
     }

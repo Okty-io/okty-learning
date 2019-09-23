@@ -1,0 +1,16 @@
+@import "../../colors";
+
+.container {
+    background: $white-background;
+    box-shadow: $shadow-light;
+
+    max-width: 1220px;
+    width: 90%;
+
+    margin: -50px auto 0;
+
+    position: relative;
+    z-index: 50;
+
+    border-top: 1px solid #d3d3d3;
+}
