@@ -5,7 +5,7 @@ import { withRouter } from "react-router";
 
 export default withRouter(({ history, match: { params: { locale } } }) => (
     <div className={style.text}>
-        <div className={style.card} textAlign='center'>
+        <div className={style.card}>
             <p>
                 Welcome to Okty’s Docker Learning Module where we’re going to teach you all you need to know
                 to master Docker. On this V1 you'll find theoretical learning lessons, quizzes and cheat

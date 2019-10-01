@@ -20,8 +20,8 @@ class ChapterCard extends React.PureComponent {
                 <Card image={{ src: illustration, alt: 'test' }}>
                     <CardContent>
                         <p className={style.title}>{chapter.name}</p>
-                        {lessons.map(lesson =>
-                            <ChaptersLessonButton key={lesson.id} lesson={lesson} chapter={chapter}/>
+                        {lessons.map((lesson, index) =>
+                            <ChaptersLessonButton key={lesson.id} lesson={lesson} position={index + 1} chapter={chapter}/>
                         )}
                     </CardContent>
                     <CardBottom> <Link to={`/${locale}/chapters/${chapter.id}`}>

@@ -22,9 +22,11 @@ export const error = message => {
     }
 };
 
-export const fetchAll = (dispatch) => {
+export const fetchAll = (dispatch, locale = 'en_US') => {
 
-    fetch(`${API_URL}/learning/chapters`, API_AJAX_HEADERS)
+    const queryString = `?lang=${locale}`;
+
+    fetch(`${API_URL}/learning/chapters${queryString}`, API_AJAX_HEADERS)
         .then(response => response.json())
         .then(response => dispatch(receiveAll(response)))
         .catch(() => dispatch(error('Cannot fetch chapters')));
