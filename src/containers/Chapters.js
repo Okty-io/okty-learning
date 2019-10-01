@@ -9,7 +9,7 @@ class Chapters extends React.Component {
     constructor(props) {
         super(props);
 
-        props.fetchChapters();
+        this.props.fetchChapters(this.props.locale);
     }
 
     render() {
@@ -32,12 +32,13 @@ class Chapters extends React.Component {
 
 const mapStateToProps = state => {
     const { chapters, error } = state.chaptersReducer;
+    const { locale } = state.localeReducer;
 
-    return { chapters, error };
+    return { chapters, error, locale };
 };
 
 const mapDispatchToProps = dispatch => ({
-    fetchChapters: () => dispatch(fetchAll(dispatch))
+    fetchChapters: (locale) => dispatch(fetchAll(dispatch, locale))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Chapters);
